@@ -1,10 +1,3 @@
-declare module "utils" {
-  export function checkTypeNumber(num: any): void;
-  export function checkTypeArray(array: any): void;
-  export function checkTypeString(str: any): void;
-  export function checkTypeObject(obj: any): void;
-}
-
 declare global {
   interface Array<T> {
     maxLength(number: number): boolean;
