@@ -4,7 +4,10 @@ const schema = new Schema({
     rate: {
         type: "number",
         require: true,
-        range: [2, 10]
+        range: [2, 10],
+        validator(num) {
+            return (num % 2) === 0
+        }
     },
 
     email: {
@@ -38,6 +41,15 @@ console.log(schema.validate({
     person: {
         firstName: "Ned",
         lastName: "Stark",
-        age: 1
+        age: 6
     }
 }))
+
+const a = {
+    n: 1,
+    validator() {
+        return 1
+    }
+}
+
+// console.log(a['validator']())

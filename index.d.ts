@@ -19,8 +19,36 @@ declare global {
   }
 }
 
+type CommonSchemaType = {
+  require?: boolean,
+  validator?: (value: any) => boolean
+}
+
+type NumberSchemaType = {
+  min?: number,
+  max?: number,
+  range?: [number, number]
+}
+
+type StringSchemaType = {
+  minLength?: number,
+  maxLength?: number,
+  regex?: RegExp,
+  values?: string[]
+}
+
+type ArraySchemaType = {
+  minLength?: number,
+  maxLength?: number,
+  empty?: boolean
+}
+
+type SchemaType = {
+  [key:string]: ({ type: "number" } & NumberSchemaType & CommonSchemaType) | ({ type: "string" } & StringSchemaType & CommonSchemaType) | ({ type: "array" } & ArraySchemaType & CommonSchemaType) | ({ type: "object" } & { schema: SchemaType })
+}
+
 declare class Schema {
-  constructor(schema: any);
+  constructor(schema: SchemaType);
   validate(objForValidate: object): boolean;
 }
 
