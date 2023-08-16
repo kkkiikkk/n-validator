@@ -36,7 +36,7 @@ const schema = new Schema({
 
 
 console.log(schema.validate({
-    rate: 5,
+    rate: 0,
     email: "example@gmail.com",
     person: {
         firstName: "Ned",
