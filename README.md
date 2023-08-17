@@ -16,8 +16,6 @@ const { Schema } = require("nop-validator");
 ### Schema
 
 ```js
-import { Schema } from 'b-validate';
-
 const schema = new Schema({
     rate: { 
         type: "number",
