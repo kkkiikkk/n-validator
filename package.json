@@ -11,5 +11,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ruddnovskiy@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkkiikkk/n-validator.git"
+  },
+  "keywords": [
+    "validate",
+    "type"
+  ],
+  "homepage": "https://github.com/kkkiikkk/n-validator#readme"
 }
